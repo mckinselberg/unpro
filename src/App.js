@@ -3,7 +3,8 @@ import React from 'react';
 import './css/App.css';
 import './css/animate.css';
 import RandomAnimations from './components/RandomAnimations.js';
-
+//import sitedata from './data/site.data';
+const songs = ["Kill Myself"]
 
 
 function App() {

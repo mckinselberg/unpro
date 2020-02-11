@@ -4,22 +4,30 @@ body {
   overflow:hidden;
   overflow-x:hidden;
   overflow-y:hidden;
+  background:#262626;
 }
 .splash {
-	max-width:100%;
-	height:25%;
+  width:150%;
 	margin-left:auto;
 	margin-right:auto;
-	margin-top:20%;
+	margin-top:10%;
   background-size:cover;
   max-width:100%;
 	z-index:1;
   text-align: center;
 }
 .splash img {
-  max-width:100%;
-  width:auto;
+  height:100%;
+  width:25%;
   transition:1s all;
+}
+@media screen and (min-width: 1440px) {
+  .splash {
+    margin-top:2.5%;
+  }
+  .splash img {
+    width:20%
+  }
 }
 @media screen and (max-width: 480px) {
   .splash  {
@@ -32,8 +40,10 @@ body {
     /*transform:rotate(90deg);*/
     transition:1s all;
     font-size:.75rem;
-    margin-top:45%;
-
+    margin-top:15%;
+  }
+  .splash img {
+    width:50%;
   }
 }
 
@@ -43,29 +53,32 @@ body {
   font-size:1rem;
 }
 .experience h1 {
-	font-size:1.2rem;
+	font-size:2.5em;
 	margin:0 auto 10px auto;
-	color:#324C7E;
+  color:#ffffff;
+  word-break: break-all;
+  max-width:98%;
 }
-.experience h2 {
-	font-size:1rem;
-	margin:0 auto 10px auto;
-	color:#324C7E;
+
+.songs {
+  text-align: center;
+  color:#ffffff;
 }
-.experience ul {
+
+.songs ul {
 	text-align: center;
 	list-style-type: none;
 	margin:0;
 	padding:0px;
 }
-.experience ul li {
+.songs ul li {
 	margin:1px;
 	padding:1px;
 }
-.experience ul li a {
-	color:#324C7E;
+.songs ul li a {
+	color:#ffffff;
 	transition:.5s all;
 }
-.experience ul li a:hover {
-	color:#000;
+.songs ul li a:hover {
+  color:#B57C48
 }

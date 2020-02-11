@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import { sample } from 'lodash';
-import splashlogo from '../img/splash_logo.png';
+import splashlogo from '../img/vivalosbeefalos.gif';
  
-export default class RandomAnimations extends Component {
+export default class RandomAnimation extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -53,8 +53,7 @@ export default class RandomAnimations extends Component {
       randomAnimation1:null,
       randomAnimation2:null
     }
-    this.randomAnimation1 = sample(this.state.animations);
-    this.randomAnimation2 = sample(this.state.animations);
+    this.randomAnimation = sample(this.state.animations);
   }
   componentDidMount() {
     //setTimeout(()=> {
@@ -68,22 +67,10 @@ export default class RandomAnimations extends Component {
     return (
       <div>
         <div className={`splash`}>
-          <img className={`animated ${this.randomAnimation1}`} src={splashlogo} alt={`Dan Kinsley Web Developer Logo`}/>
-          {console.log(splashlogo.clientHeight)}
+          <img className={`animated ${this.randomAnimation}`} src={splashlogo} alt={`the unpronounceable`}/>
         </div>
-        <div className={`experience animated  ${this.randomAnimation2}`} >
-          {/*<ul>
-            <li>http://irwinleighton.com</li>
-            <li>https://vintnersalliance.com/</li>
-            <li>https://vintageepicure.com/</li>
-            <li>https://chista.net/</li>
-          </ul>*/}
-          <h1>Front-End Developer,<br/>currently seeking a <br/>contract or full-time position.</h1>
-          {/*<h2>Current Job Skillset</h2>
-          <p>HTML5, XML, CSS, SCSS, javaScript, ReactJS, NPM, webpack, gulp </p>
-          <h2>Skills and Experience</h2>
-          <p></p>
-	        <p></p>*/}
+        <div className={`experience animated  ${this.randomAnimation}`} >
+          the unpronounceable
         </div>
       </div>
     );

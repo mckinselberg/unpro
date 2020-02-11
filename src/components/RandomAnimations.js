@@ -50,18 +50,17 @@ export default class RandomAnimation extends Component {
         'slideInLeft',
         'slideInRight',
         'slideInUp'],
-      randomAnimation1:null,
-      randomAnimation2:null
+      randomAnimation:null
     }
     this.randomAnimation = sample(this.state.animations);
   }
   componentDidMount() {
-    //setTimeout(()=> {
-      //this.setState({
+    setTimeout(()=> {
+      this.setState({
         //randomAnimation1:sample(this.state.animations),
         //randomAnimation2:sample(this.state.animations)
-      //})
-    //},1000)
+      })
+    },1000)
   }
   render() {
     return (
@@ -70,7 +69,20 @@ export default class RandomAnimation extends Component {
           <img className={`animated ${this.randomAnimation}`} src={splashlogo} alt={`the unpronounceable`}/>
         </div>
         <div className={`experience animated  ${this.randomAnimation}`} >
-          the unpronounceable
+          <h1>the unpronounceable</h1>          
+        </div>
+        <div className={`songs animated ${this.randomAnimation}`}>
+          <ul>
+            <li><a href="/mp3/01 Kill Myself.mp3">Kill Myself</a></li>
+            <li><a href="/mp3/02 Sweet Embraceable You.mp3">Sweet Embraceable You</a></li>
+            <li><a href="/mp3/03 Wrong.mp3">Wrong</a></li>
+            <li><a href="/mp3/04 Body In The Lake.mp3">Body In The Lake</a></li>
+            <li><a href="/mp3/05 Homesick.mp3">Homesick</a></li>
+            <li><a href="/mp3/06 Red Sonja.mp3">Red Sonja</a></li>
+            <li><a href="/mp3/08 A Little Me And You.mp3">A Little Me And You</a></li>
+            <li><a href="/mp3/09 If I Do.mp3">If I Do</a></li>
+            <li><a href="/mp3/10 Will The Circle Be Unbroken.mp3">Will The Circle Be Unbroken</a></li>
+          </ul>
         </div>
       </div>
     );

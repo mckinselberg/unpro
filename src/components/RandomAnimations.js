@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { sample } from 'lodash';
-import splashlogo from '../img/vivalosbeefalos.gif';
+import splashlogo from '../img/vivalosbeefalos.jpg';
  
 export default class RandomAnimation extends Component {
   constructor(props) {
@@ -55,7 +55,9 @@ export default class RandomAnimation extends Component {
     this.randomAnimation = sample(this.state.animations);
   }
   componentDidMount() {
+
     setTimeout(()=> {
+      // document.body.style.overflowY = "auto";
       this.setState({
         //randomAnimation1:sample(this.state.animations),
         //randomAnimation2:sample(this.state.animations)
@@ -83,6 +85,16 @@ export default class RandomAnimation extends Component {
             <li><a href="/mp3/09 If I Do.mp3">If I Do</a></li>
             <li><a href="/mp3/10 Will The Circle Be Unbroken.mp3">Will The Circle Be Unbroken</a></li>
           </ul>
+        </div>
+        <br/>
+        <br/>
+        <div className={`experience animated  ${this.randomAnimation}`} >
+          <a class="link" href="https://music.apple.com/us/artist/the-unpronounceable/1580673897" target="_blank" rel="noopener noreferrer">Apple Music</a>
+        </div>
+        <br/>
+        <br/>
+        <div className={`experience animated ${this.randomAnimation} white copyright`} >
+          &copy;1999-2021 the unpronounceable
         </div>
       </div>
     );

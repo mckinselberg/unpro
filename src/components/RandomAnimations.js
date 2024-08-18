@@ -73,7 +73,7 @@ export default class RandomAnimation extends Component {
         <div className={`experience animated  ${this.randomAnimation}`} >
           <h1>the unpronounceable</h1>          
         </div>
-        <div className={`songs animated ${this.randomAnimation}`}>
+        {/* <div className={`songs animated ${this.randomAnimation}`}>
           <ul>
             <li><a href="/mp3/01 Kill Myself.mp3">Kill Myself</a></li>
             <li><a href="/mp3/02 Sweet Embraceable You.mp3">Sweet Embraceable You</a></li>
@@ -85,16 +85,28 @@ export default class RandomAnimation extends Component {
             <li><a href="/mp3/09 If I Do.mp3">If I Do</a></li>
             <li><a href="/mp3/10 Will The Circle Be Unbroken.mp3">Will The Circle Be Unbroken</a></li>
           </ul>
+        </div> */}
+        <br/>
+        <br/>
+        <div className={`experience animated  ${this.randomAnimation}`} >
+          <a class="link" href="https://music.apple.com/us/artist/the-unpronounceable/1580673897" target="_blank" rel="noopener noreferrer">Find Viva Los Beefalos on Apple Music</a>
         </div>
         <br/>
         <br/>
         <div className={`experience animated  ${this.randomAnimation}`} >
-          <a class="link" href="https://music.apple.com/us/artist/the-unpronounceable/1580673897" target="_blank" rel="noopener noreferrer">Apple Music</a>
+          <a class="link" href="./mogensmusic/index.html">Find our other albums here</a>
+        </div>
+        <br/>
+        <br/>
+
+        <div className={`experience animated  ${this.randomAnimation}`} >
+          <a class="link" href="./mogensmusic/contact.html" rel="noopener noreferrer">Contact</a> &nbsp; <a class="link" href="https://www.facebook.com/people/The-Unpronounceable/100063957675509/" target="_blank" rel="noopener noreferrer">Facebook</a
+          >
         </div>
         <br/>
         <br/>
         <div className={`experience animated ${this.randomAnimation} white copyright`} >
-          &copy;1999-2021 the unpronounceable
+          &copy;1999-{new Date().getFullYear()} the unpronounceable
         </div>
       </div>
     );

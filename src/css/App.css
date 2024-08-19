@@ -1,9 +1,6 @@
 body {
   padding: 2px;
-  overflow: hidden;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  background: #262626;
+  background: #0f0f0f;
 }
 .splash {
   width: 150%;
@@ -31,12 +28,10 @@ body {
 @media screen and (max-width: 480px) {
   .splash {
     height: auto;
-    /*transform:rotate(-45deg);*/
     max-height: 40%;
     top: 0px;
     transition: 1s all;
     max-width: 100%;
-    /*transform:rotate(90deg);*/
     transition: 1s all;
     font-size: 0.75rem;
     margin-top: 15%;

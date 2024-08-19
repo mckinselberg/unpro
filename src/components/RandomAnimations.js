@@ -62,7 +62,7 @@ export default class RandomAnimation extends Component {
           <img className={`animated ${this.randomAnimation}`} src={splashlogo} alt={`the unpronounceable`}/>
         </div>
         <div className={`experience animated  ${this.randomAnimation}`} >
-          <h1>the unpronounceable</h1>          
+          <h1>the unpronounceable</h1>
         </div>
         <br/>
         <br/>

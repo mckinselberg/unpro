@@ -91,7 +91,7 @@ body {
   color: orange;
 }
 .link:hover {
-  color: #b57c48;
+  color: yellow !important;
 }
 .link:visited {
   color: orange;

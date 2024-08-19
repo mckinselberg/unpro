@@ -54,16 +54,7 @@ export default class RandomAnimation extends Component {
     }
     this.randomAnimation = sample(this.state.animations);
   }
-  componentDidMount() {
-
-    setTimeout(()=> {
-      // document.body.style.overflowY = "auto";
-      this.setState({
-        //randomAnimation1:sample(this.state.animations),
-        //randomAnimation2:sample(this.state.animations)
-      })
-    },1000)
-  }
+ 
   render() {
     return (
       <div>
@@ -73,19 +64,6 @@ export default class RandomAnimation extends Component {
         <div className={`experience animated  ${this.randomAnimation}`} >
           <h1>the unpronounceable</h1>          
         </div>
-        {/* <div className={`songs animated ${this.randomAnimation}`}>
-          <ul>
-            <li><a href="/mp3/01 Kill Myself.mp3">Kill Myself</a></li>
-            <li><a href="/mp3/02 Sweet Embraceable You.mp3">Sweet Embraceable You</a></li>
-            <li><a href="/mp3/03 Wrong.mp3">Wrong</a></li>
-            <li><a href="/mp3/04 Body In The Lake.mp3">Body In The Lake</a></li>
-            <li><a href="/mp3/05 Homesick.mp3">Homesick</a></li>
-            <li><a href="/mp3/06 Red Sonja.mp3">Red Sonja</a></li>
-            <li><a href="/mp3/08 A Little Me And You.mp3">A Little Me And You</a></li>
-            <li><a href="/mp3/09 If I Do.mp3">If I Do</a></li>
-            <li><a href="/mp3/10 Will The Circle Be Unbroken.mp3">Will The Circle Be Unbroken</a></li>
-          </ul>
-        </div> */}
         <br/>
         <br/>
         <div className={`experience animated  ${this.randomAnimation}`} >
@@ -94,13 +72,13 @@ export default class RandomAnimation extends Component {
         <br/>
         <br/>
         <div className={`experience animated  ${this.randomAnimation}`} >
-          <a class="link" href="./mogensmusic/index.html">Find our other albums here</a>
+          <a class="link" href="./albums/index.html">Find our other albums here</a>
         </div>
         <br/>
         <br/>
 
         <div className={`experience animated  ${this.randomAnimation}`} >
-          <a class="link" href="./mogensmusic/contact.html" rel="noopener noreferrer">Contact</a> &nbsp; <a class="link" href="https://www.facebook.com/people/The-Unpronounceable/100063957675509/" target="_blank" rel="noopener noreferrer">Facebook</a
+          <a class="link" href="./albums/contact.html" rel="noopener noreferrer">Contact</a> &nbsp; <a class="link" href="https://www.facebook.com/people/The-Unpronounceable/100063957675509/" target="_blank" rel="noopener noreferrer">Facebook</a
           >
         </div>
         <br/>

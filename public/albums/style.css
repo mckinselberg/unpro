@@ -8,7 +8,7 @@ body {
 
 /* NAVIGATION */
 #indnav {
-	font-size: 100%;
+	font-size: 1em;
 	width: 100%;
 }
 
@@ -73,7 +73,7 @@ body {
 
 	
 
-/*------------------Layout-------------------*/
+/* Layout */
 @media (max-width: 800px) {
 	#header::after {
 		content: "The Unpronounceable";
@@ -105,12 +105,6 @@ body {
 		margin-left: auto;
 		padding-top:5px;
 	}
-	#footer {
-		padding: 20px 0 20px 0;
-		margin-right: auto;
-		margin-left: auto;
-		background-repeat: no-repeat;
-	}
 	.blurb_justified {
 		margin: 0;
 		padding: 20px;
@@ -128,23 +122,27 @@ body {
 	p.download_link.small a:active {
 		color: antiquewhite;
 	}
-
-	p.album_blurb.small {
+	p.album_blurb.small,
+	p.blurb.small {
 		text-align:center;
-		 font-size: .70em;
+		 font-size: .80em;
 		font-style: normal;
 		padding-top: 5px;
 		margin-left: 80px;	
 		margin-right: 80px;
 		padding-right: 0px;
 	}
-	p.album_blurb.small a {
+	p.album_blurb.small a,
+	p.blurb.small a {
 		color: bisque;
 	}
-	p.album_blurb.small a:hover {
+	p.album_blurb.small a:hover,
+	p.blurb.small a:hover {
 		color: white;
+		background-color: black !important;
 	}
-	p.album_blurb.small a:hover {
+	p.album_blurb.small a:hover,
+	p.blurb.small a:hover {
 		color: white;
 		text-decoration:underline;
 		background-image:url(images/elements/link-color.jpg);
@@ -183,19 +181,12 @@ body {
 		margin-left: auto;
 		padding-top:5px;
 	}
-		
+	
 	#album-content {
 		width: 600px;
 		margin-right: auto;
 		margin-left: auto;
 		padding-top:5px;
-	}
-	#footer {
-		padding: 20px 0 20px 0;
-		/* background-image:url(images/elements/footer.jpg); */
-		margin-right: auto;
-		margin-left: auto;
-		background-repeat: no-repeat;
 	}
 }
 
@@ -209,6 +200,14 @@ body {
 		max-width: 80%;
 		width: 80%;
 	}
+}
+
+
+#footer {
+	padding: 20px 0 20px 0;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: 1em;
 }
 
 
@@ -250,6 +249,9 @@ body {
 }
 
 /* Typography */
+#header h1 {
+	visibility: hidden;
+}
 h1 {
 	text-align:Left;
  	font-size: .95em;
@@ -316,7 +318,7 @@ p.blurb_justified {
 }
 p.blurb {
 	text-align: center;
- 	font-size: .70em;
+ 	font-size: .80em;
 	font-style: normal;
 	padding-top: 5px;
 	margin-left: 80px;	

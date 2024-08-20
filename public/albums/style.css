@@ -231,9 +231,22 @@ body {
 	padding: 0 8px 8px;
 	text-align: center;
 }
+.albums a:hover,
+.albums a:focus,
+.albums a:active {
+	text-decoration: none !important;
+}
 .albums a img {
 	text-decoration: none !important;
 	max-width: 100%;
+	transition: 0.5s all ease-in-out;
+}
+.albums a:hover img,
+.albums a:focus img,
+.albums a:active img {
+	transform: rotate(5deg);
+	transition: 0.5s all ease-in-out;
+	outline: 1px solid black;
 }
 
 /* Typography */

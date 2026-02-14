@@ -1,0 +1,158 @@
+.legacy-page {
+  color: #111;
+  min-height: 100vh;
+  padding-bottom: 24px;
+}
+
+.legacy-header {
+  width: 656px;
+  max-width: 100%;
+  height: 159px;
+  margin: 0 auto;
+  background-position: center;
+  background-size: cover;
+}
+
+.legacy-container {
+  width: 656px;
+  max-width: 100%;
+  margin: 0 auto;
+  background-position: center;
+  background-repeat: repeat-y;
+}
+
+.legacy-nav {
+  padding-top: 8px;
+}
+
+.legacy-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.legacy-nav li {
+  display: inline-block;
+  font-size: 0.9rem;
+}
+
+.legacy-nav li + li::before {
+  content: '|';
+  margin: 0 8px;
+}
+
+.legacy-nav a {
+  color: #111;
+  text-decoration: none;
+}
+
+.legacy-nav a:hover {
+  text-decoration: underline;
+}
+
+.legacy-content {
+  padding: 12px 32px 0;
+}
+
+.legacy-content h2 {
+  text-align: center;
+  font-style: italic;
+  font-size: 1rem;
+  margin: 20px 0;
+}
+
+.legacy-blurb,
+.legacy-bio {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  line-height: 1.6;
+}
+
+.legacy-blurb {
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.legacy-bio {
+  font-size: 0.9rem;
+}
+
+.legacy-blurb a,
+.legacy-bio a {
+  color: #111;
+}
+
+.legacy-albums {
+  margin: 18px auto 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+}
+
+.legacy-albums a {
+  flex: 0 1 30%;
+}
+
+.legacy-albums img {
+  width: 100%;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.legacy-albums a:hover img {
+  transform: rotate(3deg);
+}
+
+.legacy-footer {
+  text-align: center;
+  font-size: 0.72rem;
+  margin-top: 24px;
+  color: #111;
+}
+
+@media (max-width: 800px) {
+  .legacy-page {
+    color: bisque;
+  }
+
+  .legacy-header {
+    height: 0;
+    min-height: 52px;
+    background-image: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .legacy-header::after {
+    content: 'The Unpronounceable';
+    font-size: 1.7rem;
+    color: bisque;
+    text-align: center;
+  }
+
+  .legacy-container {
+    width: 100%;
+    background: transparent;
+  }
+
+  .legacy-nav li {
+    font-size: 1rem;
+  }
+
+  .legacy-nav a,
+  .legacy-blurb a,
+  .legacy-bio a,
+  .legacy-footer {
+    color: bisque;
+  }
+
+  .legacy-content {
+    padding: 8px 20px 0;
+  }
+
+  .legacy-albums a {
+    flex-basis: 80%;
+  }
+}

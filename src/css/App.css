@@ -1,104 +1,840 @@
-body {
-  padding: 2px;
-  background: #0f0f0f;
+:root {
+  --ink: #e9dfd0;
+  --paper: #120f0d;
+  --amber: #f59e0b;
+  --accent: #f97316;
+  --teal: #14b8a6;
+  --panel: rgba(24, 18, 15, 0.72);
 }
-.splash {
-  width: 150%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10%;
-  background-size: cover;
-  max-width: 100%;
+
+body {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(249, 115, 22, 0.22), transparent 36%),
+    radial-gradient(circle at 78% 15%, rgba(20, 184, 166, 0.2), transparent 34%),
+    linear-gradient(160deg, #0f0b09, #191310 45%, #0d0a08);
+  color: var(--ink);
+}
+
+.home-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  padding: 3.5rem 1.2rem 2rem;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(var(--home-grad-a, 183, 83, 9), 0.34), transparent 36%),
+    radial-gradient(
+      circle at 78% 15%,
+      rgba(var(--home-grad-b, 15, 118, 110), 0.28),
+      transparent 34%
+    ),
+    linear-gradient(160deg, #0f0b09, rgba(var(--home-grad-c, 20, 16, 13), 1) 45%, #0d0a08);
+  transition: background 900ms ease;
+}
+
+.home-glow {
+  position: absolute;
+  z-index: 0;
+  width: 28rem;
+  height: 28rem;
+  filter: blur(80px);
+  opacity: 0.45;
+}
+
+.home-glow-left {
+  top: -6rem;
+  left: -10rem;
+  background: rgb(var(--home-glow-left, 180, 83, 9));
+  transition: background 900ms ease;
+}
+
+.home-glow-right {
+  bottom: -9rem;
+  right: -10rem;
+  background: rgb(var(--home-glow-right, 15, 118, 110));
+  transition: background 900ms ease;
+}
+
+.home-hero,
+.home-actions,
+.home-socials,
+.home-footer {
+  position: relative;
   z-index: 1;
+}
+
+.home-hero {
+  max-width: 65rem;
+  margin: 0 auto;
   text-align: center;
 }
+
+.splash {
+  margin: 0 auto;
+  width: clamp(20rem, 42vw, 52rem);
+  aspect-ratio: 16 / 9;
+  animation: floatIn 800ms ease both;
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
 .splash img {
+  width: 100%;
+  display: block;
+  border: 1px solid rgba(233, 223, 208, 0.25);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+}
+
+.home-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  z-index: 0;
+  transition: opacity 700ms ease;
+}
+
+.home-slide.is-active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.home-slide-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
   height: 100%;
-  width: 25%;
-  transition: 1s all;
+  object-fit: cover;
 }
-@media screen and (min-width: 1440px) {
-  .splash {
-    margin-top: 2.5%;
-  }
-  .splash img {
-    width: 20%;
-  }
+
+.home-slide::after {
+  content: '';
+  position: absolute;
+  inset: -20%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 36%,
+    rgba(255, 255, 255, 0.28) 48%,
+    rgba(255, 255, 255, 0.08) 53%,
+    rgba(255, 255, 255, 0) 66%
+  );
+  transform: translateX(-120%) skewX(-18deg);
+  animation: sheenSweep 3.6s ease-in-out infinite;
+  pointer-events: none;
+  opacity: 0;
 }
-@media screen and (max-width: 480px) {
-  .splash {
-    height: auto;
-    max-height: 40%;
-    top: 0px;
-    transition: 1s all;
-    max-width: 100%;
-    transition: 1s all;
-    font-size: 0.75rem;
-    margin-top: 15%;
-  }
-  .splash img {
-    width: 50%;
-  }
+
+.home-slide.is-active::after {
+  opacity: 1;
 }
 
 .experience {
-  text-align: center;
-  padding: 0%;
-  font-size: 1rem;
-}
-.experience h1 {
-  font-size: 2.5em;
-  margin: 0 auto 10px auto;
-  color: #ffffff;
-  word-break: break-all;
-  max-width: 98%;
-}
-@media screen and (max-width: 480px) {
-  .experience h1 {
-    font-size: 2em;
-  }
+  margin-top: 1.2rem;
 }
 
-.songs {
-  text-align: center;
-  color: #ffffff;
-}
-
-.songs ul {
-  text-align: center;
-  list-style-type: none;
+.home-kicker {
   margin: 0;
-  padding: 0px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font:
+    700 0.78rem/1.2 'Franklin Gothic Medium',
+    'Trebuchet MS',
+    sans-serif;
+  color: #fbbf24;
 }
-.songs ul li {
-  margin: 1px;
-  padding: 1px;
+
+.experience h1 {
+  margin: 0.65rem 0 0;
+  font:
+    700 clamp(2.1rem, 7vw, 4.8rem) / 1 'Bodoni Moda',
+    Didot,
+    'Times New Roman',
+    serif;
+  letter-spacing: 0.02em;
+  text-transform: lowercase;
 }
-.songs ul li a {
-  color: #ffffff;
-  transition: 0.5s all;
+
+.home-summary {
+  margin: 0.9rem auto 0;
+  max-width: 35rem;
+  font:
+    500 clamp(1rem, 2.6vw, 1.2rem) / 1.6 'Trebuchet MS',
+    Verdana,
+    sans-serif;
+  color: #f7efe3;
 }
-.songs ul li a:hover {
-  color: #b57c48;
+
+.home-actions {
+  margin: 2.2rem auto 0;
+  max-width: 60rem;
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(11.5rem, 1fr));
+}
+
+.home-button {
+  text-align: center;
+  padding: 0.8rem 1rem;
+  border-radius: 999px;
+  font:
+    700 0.84rem/1 'Franklin Gothic Medium',
+    'Trebuchet MS',
+    sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+.home-button:hover {
+  transform: translateY(-2px);
+}
+
+.home-button-primary {
+  background: linear-gradient(120deg, var(--amber), var(--accent));
+  color: #1b1107;
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.26);
+}
+
+.home-button-secondary {
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--ink);
+  border: 1px solid rgba(233, 223, 208, 0.25);
+}
+
+.home-socials {
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.home-social-link {
+  color: #7dd3fc;
+  text-decoration: none;
+  font:
+    600 0.95rem/1.2 'Trebuchet MS',
+    Verdana,
+    sans-serif;
+}
+
+.home-social-link:hover {
+  color: #a5f3fc;
+}
+
+.home-footer {
+  margin-top: 2.2rem;
+  text-align: center;
+  font:
+    500 0.76rem/1.2 'Trebuchet MS',
+    Verdana,
+    sans-serif;
+  color: rgba(233, 223, 208, 0.85);
+}
+
+.presskit-page {
+  min-height: 100vh;
+  padding: 2.5rem 1rem 2rem;
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.presskit-page a {
+  color: #7dd3fc;
+  text-decoration-color: rgba(125, 211, 252, 0.45);
+  text-underline-offset: 0.18em;
+}
+
+.presskit-page a:visited {
+  color: #fbbf24;
+  text-decoration-color: rgba(251, 191, 36, 0.5);
+}
+
+.presskit-page a:hover,
+.presskit-page a:focus-visible {
+  color: #bae6fd;
+  text-decoration-color: rgba(186, 230, 253, 0.75);
+}
+
+.presskit-hero h1 {
+  margin: 0.35rem 0 0;
+  font:
+    700 clamp(2rem, 5vw, 3.5rem) / 1.05 'Bodoni Moda',
+    Didot,
+    'Times New Roman',
+    serif;
+}
+
+.presskit-label {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #f59e0b;
+  font:
+    700 0.76rem/1 'Franklin Gothic Medium',
+    'Trebuchet MS',
+    sans-serif;
+}
+
+.presskit-subtitle {
+  margin: 0.8rem 0 0;
+  max-width: 38rem;
+  font:
+    500 1rem/1.5 'Trebuchet MS',
+    Verdana,
+    sans-serif;
+  color: #efe8de;
+}
+
+.presskit-grid {
+  margin-top: 1.4rem;
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+}
+
+.presskit-card {
+  background: var(--panel);
+  border: 1px solid rgba(233, 223, 208, 0.16);
+  border-radius: 14px;
+  padding: 1rem;
+  backdrop-filter: blur(4px);
+}
+
+.presskit-card h2 {
+  margin: 0;
+  font:
+    700 1rem/1.1 'Franklin Gothic Medium',
+    'Trebuchet MS',
+    sans-serif;
+  color: #fbbf24;
+}
+
+.presskit-card p,
+.presskit-card li {
+  font:
+    500 0.95rem/1.55 'Trebuchet MS',
+    Verdana,
+    sans-serif;
+}
+
+.presskit-card ul {
+  margin: 0.6rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.presskit-links {
+  margin-top: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.42rem;
+}
+
+.presskit-links a {
+  text-decoration: none;
+}
+
+.presskit-links a:hover,
+.presskit-links a:focus-visible {
+  text-decoration: underline;
+}
+
+.presskit-video-card {
+  grid-column: 1 / -1;
+}
+
+.presskit-video-item + .presskit-video-item {
+  margin-top: 1rem;
+}
+
+.presskit-video-frame {
+  margin-top: 0.7rem;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(233, 223, 208, 0.18);
+  background: #000;
+}
+
+.presskit-video-frame iframe,
+.presskit-video-frame video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+  display: block;
+}
+
+.presskit-small {
+  margin: 0.4rem 0 0;
+  color: rgba(233, 223, 208, 0.8);
+  font-size: 0.82rem;
+}
+
+.presskit-nav {
+  margin-top: 1.4rem;
+  display: flex;
+  gap: 0.95rem;
+  flex-wrap: wrap;
+}
+
+.presskit-nav a {
+  color: var(--ink);
+  text-decoration: none;
+  padding: 0.46rem 0.72rem;
+  border-radius: 999px;
+  border: 1px solid rgba(233, 223, 208, 0.2);
+  font:
+    600 0.83rem/1 'Franklin Gothic Medium',
+    'Trebuchet MS',
+    sans-serif;
+}
+
+.presskit-nav a:visited {
+  color: var(--ink);
+}
+
+.presskit-nav a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--ink);
+  text-decoration: none;
 }
 
 .link {
-  color: orange;
+  color: #fbbf24;
 }
+
 .link:hover {
-  color: yellow !important;
-}
-.link:visited {
-  color: orange;
-}
-.link:active {
-  color: orange;
+  color: #fde68a !important;
 }
 
 .white {
-  color: white;
+  color: #fff;
 }
 
-.copyright {
-  font-size: 0.8em;
+.album-page {
+  max-width: 72rem;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 2.4rem 1rem 2rem;
+}
+
+.album-header h1 {
+  margin: 0.35rem 0 0;
+  font:
+    700 clamp(2rem, 5vw, 3.4rem) / 1.05 'Bodoni Moda',
+    Didot,
+    'Times New Roman',
+    serif;
+}
+
+.album-kicker {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #f59e0b;
+  font:
+    700 0.76rem/1 'Franklin Gothic Medium',
+    'Trebuchet MS',
+    sans-serif;
+}
+
+.album-year {
+  margin: 0.65rem 0 0;
+  color: #ddd3c3;
+  font:
+    600 0.95rem/1.5 'Trebuchet MS',
+    Verdana,
+    sans-serif;
+}
+
+.album-nav {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.album-nav a {
+  text-decoration: none;
+  color: #efe8de;
+  border: 1px solid rgba(233, 223, 208, 0.23);
+  border-radius: 999px;
+  padding: 0.42rem 0.72rem;
+  font:
+    600 0.8rem/1 'Franklin Gothic Medium',
+    'Trebuchet MS',
+    sans-serif;
+}
+
+.album-nav a:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.album-layout {
+  margin-top: 1.2rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(13rem, 20rem) 1fr;
+}
+
+.album-cover-wrap {
+  background: rgba(20, 15, 12, 0.72);
+  border: 1px solid rgba(233, 223, 208, 0.18);
+  border-radius: 14px;
+  padding: 0.8rem;
+  height: fit-content;
+}
+
+.album-cover {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+}
+
+.album-note {
+  margin: 0.8rem 0 0;
+  color: #efe8de;
+  font:
+    500 0.9rem/1.5 'Trebuchet MS',
+    Verdana,
+    sans-serif;
+}
+
+.album-player {
+  margin-top: 0.9rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(233, 223, 208, 0.18);
+}
+
+.album-player-label {
+  margin: 0;
+  color: #fbbf24;
+  font:
+    700 0.78rem/1 'Franklin Gothic Medium',
+    'Trebuchet MS',
+    sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.album-player-track {
+  margin: 0.45rem 0 0;
+  color: #efe8de;
+  font:
+    600 0.9rem/1.4 'Trebuchet MS',
+    Verdana,
+    sans-serif;
+}
+
+.album-player-controls {
+  margin-top: 0.55rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.album-player-controls button {
+  border: 1px solid rgba(233, 223, 208, 0.23);
+  background: rgba(255, 255, 255, 0.05);
+  color: #efe8de;
+  border-radius: 999px;
+  padding: 0.34rem 0.62rem;
+  font:
+    600 0.76rem/1 'Franklin Gothic Medium',
+    'Trebuchet MS',
+    sans-serif;
+  cursor: pointer;
+}
+
+.album-player-controls button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.album-player audio {
+  margin-top: 0.55rem;
+  width: 100%;
+}
+
+.album-sections {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.album-card {
+  background: rgba(20, 15, 12, 0.72);
+  border: 1px solid rgba(233, 223, 208, 0.18);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.album-card h2 {
+  margin: 0 0 0.7rem;
+  color: #fbbf24;
+  font:
+    700 1rem/1.2 'Franklin Gothic Medium',
+    'Trebuchet MS',
+    sans-serif;
+}
+
+.album-card ol {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.38rem;
+}
+
+.album-card li {
+  color: #efe8de;
+  font:
+    500 0.92rem/1.4 'Trebuchet MS',
+    Verdana,
+    sans-serif;
+}
+
+.album-track-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.42rem;
+}
+
+.album-track-row button {
+  border: 1px solid rgba(233, 223, 208, 0.23);
+  background: rgba(255, 255, 255, 0.05);
+  color: #efe8de;
+  border-radius: 999px;
+  padding: 0.24rem 0.55rem;
+  font:
+    600 0.72rem/1 'Franklin Gothic Medium',
+    'Trebuchet MS',
+    sans-serif;
+  cursor: pointer;
+}
+
+.album-track-active {
+  color: #fbbf24;
+}
+
+.album-card a {
+  color: #7dd3fc;
+}
+
+.album-card a:hover {
+  color: #a5f3fc;
+}
+
+.album-download {
+  margin-top: 0.85rem;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid rgba(233, 223, 208, 0.25);
+  font:
+    600 0.8rem/1 'Franklin Gothic Medium',
+    'Trebuchet MS',
+    sans-serif;
+}
+
+@media (max-width: 860px) {
+  .album-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .album-cover-wrap {
+    max-width: 23rem;
+  }
+}
+
+.onepager-page {
+  min-height: 100vh;
+  padding: 1.5rem 1rem 2rem;
+}
+
+.onepager-actions {
+  max-width: 8.5in;
+  margin: 0 auto 1rem;
+  display: flex;
+  gap: 0.8rem;
+}
+
+.onepager-print-btn,
+.onepager-back-link {
+  border: 1px solid rgba(233, 223, 208, 0.3);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--ink);
+  text-decoration: none;
+  padding: 0.55rem 0.85rem;
+  font:
+    600 0.82rem/1 'Franklin Gothic Medium',
+    'Trebuchet MS',
+    sans-serif;
+  cursor: pointer;
+}
+
+.onepager-sheet {
+  width: 8.5in;
+  min-height: 11in;
+  margin: 0 auto;
+  background: #fff;
+  color: #111;
+  padding: 0.56in;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.32);
+}
+
+.onepager-header h1 {
+  margin: 0;
+  font:
+    700 0.62in/1 'Bodoni Moda',
+    Didot,
+    'Times New Roman',
+    serif;
+}
+
+.onepager-tag {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font:
+    700 0.14in/1 'Franklin Gothic Medium',
+    'Trebuchet MS',
+    sans-serif;
+  color: #b45309;
+}
+
+.onepager-header p {
+  margin: 0.12in 0 0;
+  font:
+    600 0.16in/1.3 'Trebuchet MS',
+    Verdana,
+    sans-serif;
+}
+
+.onepager-section {
+  margin-top: 0.26in;
+}
+
+.onepager-section h2,
+.onepager-columns h2 {
+  margin: 0 0 0.08in;
+  font:
+    700 0.2in/1.2 'Franklin Gothic Medium',
+    'Trebuchet MS',
+    sans-serif;
+}
+
+.onepager-section p,
+.onepager-columns li,
+.onepager-footer p {
+  margin: 0;
+  font:
+    500 0.16in/1.45 'Trebuchet MS',
+    Verdana,
+    sans-serif;
+}
+
+.onepager-columns {
+  margin-top: 0.26in;
+  display: grid;
+  gap: 0.24in;
+  grid-template-columns: 1fr 1fr;
+}
+
+.onepager-columns ul {
+  margin: 0;
+  padding-left: 0.2in;
+}
+
+.onepager-footer {
+  margin-top: 0.42in;
+  padding-top: 0.18in;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.2in;
+}
+
+@media (max-width: 900px) {
+  .onepager-sheet {
+    width: 100%;
+    min-height: 0;
+    padding: 1.2rem;
+  }
+
+  .onepager-header h1 {
+    font-size: 2.3rem;
+  }
+
+  .onepager-tag {
+    font-size: 0.85rem;
+  }
+
+  .onepager-header p,
+  .onepager-section p,
+  .onepager-columns li,
+  .onepager-footer p {
+    font-size: 0.95rem;
+  }
+
+  .onepager-section h2,
+  .onepager-columns h2 {
+    font-size: 1rem;
+  }
+}
+
+@media print {
+  @page {
+    size: letter;
+    margin: 0;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .onepager-page {
+    padding: 0;
+    min-height: 0;
+  }
+
+  .onepager-sheet {
+    width: 8.5in;
+    min-height: 11in;
+    margin: 0;
+    box-shadow: none;
+  }
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sheenSweep {
+  0% {
+    transform: translateX(-120%) skewX(-18deg);
+  }
+
+  42% {
+    transform: translateX(120%) skewX(-18deg);
+  }
+
+  100% {
+    transform: translateX(120%) skewX(-18deg);
+  }
 }

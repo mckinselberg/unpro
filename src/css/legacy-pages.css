@@ -1,158 +1,162 @@
-.legacy-page {
-  color: #111;
+.legacy2-page {
+  max-width: 72rem;
+  margin: 0 auto;
   min-height: 100vh;
-  padding-bottom: 24px;
+  padding: 2.4rem 1rem 2rem;
 }
 
-.legacy-header {
-  width: 656px;
-  max-width: 100%;
-  height: 159px;
-  margin: 0 auto;
-  background-position: center;
-  background-size: cover;
+.legacy2-header h1 {
+  margin: 0.35rem 0 0;
+  font:
+    700 clamp(2rem, 5vw, 3.4rem) / 1.05 'Bodoni Moda',
+    Didot,
+    'Times New Roman',
+    serif;
+  color: #f4ece0;
 }
 
-.legacy-container {
-  width: 656px;
-  max-width: 100%;
-  margin: 0 auto;
-  background-position: center;
-  background-repeat: repeat-y;
-}
-
-.legacy-nav {
-  padding-top: 8px;
-}
-
-.legacy-nav ul {
-  list-style: none;
+.legacy2-kicker {
   margin: 0;
-  padding: 0;
-  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #f59e0b;
+  font:
+    700 0.76rem/1 'Franklin Gothic Medium',
+    'Trebuchet MS',
+    sans-serif;
 }
 
-.legacy-nav li {
-  display: inline-block;
-  font-size: 0.9rem;
+.legacy2-subtitle {
+  margin: 0.65rem 0 0;
+  max-width: 40rem;
+  font:
+    500 1rem/1.5 'Trebuchet MS',
+    Verdana,
+    sans-serif;
+  color: #ddd3c3;
 }
 
-.legacy-nav li + li::before {
-  content: '|';
-  margin: 0 8px;
-}
-
-.legacy-nav a {
-  color: #111;
-  text-decoration: none;
-}
-
-.legacy-nav a:hover {
-  text-decoration: underline;
-}
-
-.legacy-content {
-  padding: 12px 32px 0;
-}
-
-.legacy-content h2 {
-  text-align: center;
-  font-style: italic;
-  font-size: 1rem;
-  margin: 20px 0;
-}
-
-.legacy-blurb,
-.legacy-bio {
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  line-height: 1.6;
-}
-
-.legacy-blurb {
-  text-align: center;
-  font-size: 0.95rem;
-}
-
-.legacy-bio {
-  font-size: 0.9rem;
-}
-
-.legacy-blurb a,
-.legacy-bio a {
-  color: #111;
-}
-
-.legacy-albums {
-  margin: 18px auto 0;
+.legacy2-nav {
+  margin-top: 1.1rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
+  gap: 0.6rem;
 }
 
-.legacy-albums a {
-  flex: 0 1 30%;
+.legacy2-nav a {
+  text-decoration: none;
+  color: #efe8de;
+  border: 1px solid rgba(233, 223, 208, 0.23);
+  border-radius: 999px;
+  padding: 0.43rem 0.74rem;
+  font:
+    600 0.8rem/1 'Franklin Gothic Medium',
+    'Trebuchet MS',
+    sans-serif;
 }
 
-.legacy-albums img {
+.legacy2-nav a:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.legacy2-content {
+  margin-top: 1.2rem;
+}
+
+.legacy2-albums-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+  gap: 0.9rem;
+}
+
+.legacy2-album-card {
+  display: block;
+  text-decoration: none;
+  background: rgba(20, 15, 12, 0.72);
+  border: 1px solid rgba(233, 223, 208, 0.18);
+  border-radius: 14px;
+  overflow: hidden;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease;
+}
+
+.legacy2-album-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(233, 223, 208, 0.38);
+}
+
+.legacy2-album-card img {
   width: 100%;
   display: block;
-  transition: transform 0.2s ease;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
 
-.legacy-albums a:hover img {
-  transform: rotate(3deg);
+.legacy2-album-meta {
+  padding: 0.75rem;
 }
 
-.legacy-footer {
+.legacy2-album-meta p {
+  margin: 0;
+  color: #f4ece0;
+  font:
+    700 0.94rem/1.3 'Trebuchet MS',
+    Verdana,
+    sans-serif;
+}
+
+.legacy2-album-meta span {
+  display: inline-block;
+  margin-top: 0.3rem;
+  color: #fbbf24;
+  font:
+    600 0.78rem/1 'Franklin Gothic Medium',
+    'Trebuchet MS',
+    sans-serif;
+}
+
+.legacy2-card {
+  background: rgba(20, 15, 12, 0.72);
+  border: 1px solid rgba(233, 223, 208, 0.18);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.legacy2-card h2 {
+  margin: 0;
+  color: #fbbf24;
+  font:
+    700 1rem/1.2 'Franklin Gothic Medium',
+    'Trebuchet MS',
+    sans-serif;
+}
+
+.legacy2-card p {
+  margin: 0.7rem 0 0;
+  color: #efe8de;
+  font:
+    500 0.96rem/1.6 'Trebuchet MS',
+    Verdana,
+    sans-serif;
+}
+
+.legacy2-card a {
+  color: #7dd3fc;
+}
+
+.legacy2-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 0.9rem;
+}
+
+.legacy2-footer {
+  margin-top: 1.3rem;
+  color: rgba(233, 223, 208, 0.83);
   text-align: center;
-  font-size: 0.72rem;
-  margin-top: 24px;
-  color: #111;
-}
-
-@media (max-width: 800px) {
-  .legacy-page {
-    color: bisque;
-  }
-
-  .legacy-header {
-    height: 0;
-    min-height: 52px;
-    background-image: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .legacy-header::after {
-    content: 'The Unpronounceable';
-    font-size: 1.7rem;
-    color: bisque;
-    text-align: center;
-  }
-
-  .legacy-container {
-    width: 100%;
-    background: transparent;
-  }
-
-  .legacy-nav li {
-    font-size: 1rem;
-  }
-
-  .legacy-nav a,
-  .legacy-blurb a,
-  .legacy-bio a,
-  .legacy-footer {
-    color: bisque;
-  }
-
-  .legacy-content {
-    padding: 8px 20px 0;
-  }
-
-  .legacy-albums a {
-    flex-basis: 80%;
-  }
+  font:
+    500 0.74rem/1.3 'Trebuchet MS',
+    Verdana,
+    sans-serif;
 }

@@ -2,11 +2,13 @@ services:
   - type: web
     name: unpro
     runtime: static
-    buildCommand: HUSKY=0 HUSKY_SKIP_INSTALL=1 npm ci && npm run build
+    buildCommand: git lfs install --local && git lfs pull && HUSKY=0 HUSKY_SKIP_INSTALL=1 npm ci && npm run build
     staticPublishPath: dist
     envVars:
       - key: NODE_VERSION
         value: 20
+      - key: GIT_LFS_SKIP_SMUDGE
+        value: '0'
       - key: HUSKY
         value: '0'
       - key: HUSKY_SKIP_INSTALL

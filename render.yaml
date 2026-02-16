@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: unpro
+    runtime: static
+    buildCommand: HUSKY=0 HUSKY_SKIP_INSTALL=1 npm ci && npm run build
+    staticPublishPath: dist
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: HUSKY
+        value: '0'
+      - key: HUSKY_SKIP_INSTALL
+        value: '1'
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

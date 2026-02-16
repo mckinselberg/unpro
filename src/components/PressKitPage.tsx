@@ -1,8 +1,5 @@
 import { Link } from 'react-router-dom';
 
-const albumsBasePath = `${import.meta.env.BASE_URL}albums`;
-const mp3BasePath = `${import.meta.env.BASE_URL}mp3`;
-
 type PressVideo = {
   title: string;
   file: string;
@@ -10,6 +7,9 @@ type PressVideo = {
 };
 
 const toPublicAssetUrl = (path: string) => encodeURI(`${import.meta.env.BASE_URL}${path}`);
+const latestPressPhotoUrl = toPublicAssetUrl(
+  'img/487095095_1105971228211456_6044861209878856982_n.jpg',
+);
 const blankPosterDataUrl =
   "data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1280' height='720' viewBox='0 0 1280 720'%3E%3Crect width='1280' height='720' fill='%23000'/%3E%3C/svg%3E";
 
@@ -131,18 +131,8 @@ export default function PressKitPage() {
           <h2>Assets</h2>
           <div className="presskit-links">
             <Link to="/presskit/one-pager">Downloadable one-pager (PDF)</Link>
-            <a
-              href={`${albumsBasePath}/images/albums/vivalosbeefalos.gif`}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Album art: Viva Los Beefalos
-            </a>
-            <a href={`${mp3BasePath}/vivalosbeefalos.zip`} target="_blank" rel="noreferrer">
-              Download: Viva Los Beefalos (ZIP)
-            </a>
-            <a href={`${mp3BasePath}/vivalosbeefalos.jpg`} target="_blank" rel="noreferrer">
-              Promo image
+            <a href={latestPressPhotoUrl} target="_blank" rel="noreferrer">
+              Promo image (latest)
             </a>
           </div>
         </article>

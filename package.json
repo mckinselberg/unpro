@@ -11,7 +11,7 @@
     "lint-staged": "lint-staged",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
-    "prepare": "husky"
+    "prepare": "node scripts/prepare.js"
   },
   "lint-staged": {
     "*.{ts,tsx}": [

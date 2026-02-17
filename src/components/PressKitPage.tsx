@@ -16,17 +16,17 @@ const blankPosterDataUrl =
 const featuredVideos: PressVideo[] = [
   {
     title: 'Iron Man (2021-08-07)',
-    file: '20210807_IronMan.mp4',
+    file: '20210807_IronMan-web.mp4',
     poster: 'vids/20210807_IronMan-poster.jpg',
   },
   {
     title: 'Ugly (Funhouse 2021)',
-    file: 'Ugly (Funhouse 2021).mp4',
+    file: 'Ugly (Funhouse 2021)-web.mp4',
     poster: 'vids/Ugly (Funhouse 2021)-poster.jpg',
   },
   {
     title: 'After Dark (2021-08-07)',
-    file: '20210807_AfterDark.mp4',
+    file: '20210807_AfterDark-web.mp4',
     poster: 'vids/20210807_AfterDark-poster.jpg',
   },
 ];
@@ -47,7 +47,7 @@ export default function PressKitPage() {
           <h2>Quick Facts</h2>
           <ul>
             <li>Origin: Bethlehem, PA + West Orange, NJ</li>
-            <li>Active: 1999-2008</li>
+            <li>Active: 1999-Present</li>
             <li>Style: Countrifunked Jazzabilly</li>
             <li>Known for: Genre collision, free archive releases</li>
           </ul>
